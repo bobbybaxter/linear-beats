@@ -1,13 +1,13 @@
 import React from 'react';
 import permutationData from '../../helpers/data/permutationData';
 
-import FourFourMeasure from '../FourFourMeasure/FourFourMeasure';
+import Test2Measure from '../Test2Measure/Test2Measure';
 
-import './FourFour.scss';
+import './Test2.scss';
 
-class FourFour extends React.Component {
+class Test2 extends React.Component {
   state = {
-    fourFourBeats: [],
+    test2Beats: [],
     abcjsStrings: [],
   }
 
@@ -16,11 +16,11 @@ class FourFour extends React.Component {
   }
 
   buildAbcjsStrings = () => {
-    const { fourFourBeats } = this.state;
+    const { test2Beats } = this.state;
     const arrayOfStrings = [];
     const title = 'X: 1\nT: ';
     const notationInfo = '\nC:\nL: 1/16\nU: n=!style=x!\nK: clef=perc\nI:linebreak $\n%%stretchlast\nV: ALL stem=up\n';
-    fourFourBeats.forEach((perm) => {
+    test2Beats.forEach((perm) => {
       if (perm.isUsed !== false) {
         const id = perm.permutations;
         const abcjsString = `${title}${perm.difficulty} - ${perm.permutations}${notationInfo}|:${perm.permutations} ${perm.permutations} ${perm.permutations} ${perm.permutations}:||`;
@@ -34,30 +34,30 @@ class FourFour extends React.Component {
   getPermsData = () => {
     permutationData.getPermutationData()
       .then((res) => {
-        this.setState({ fourFourBeats: res });
+        this.setState({ Test2Beats: res });
         this.buildAbcjsStrings();
       })
       .catch((err) => console.error(err));
   };
 
   render() {
-    const makeFourFourMeasures = this.state.abcjsStrings
+    const makeTest2Measures = this.state.abcjsStrings
       .map((measure) => (
-        <FourFourMeasure
+        <Test2Measure
           key={measure.id}
           id={measure.id}
           notation={measure.abcjsString}
         />
       ));
     return (
-      <div className="FourFour mt-3 justify-content-center">
-        <h1>FourFour</h1>
+      <div className="Test2 mt-3 justify-content-center">
+        <h1>Test2</h1>
           <div className="d-flex flex-row flex-wrap">
-            {makeFourFourMeasures}
+            {makeTest2Measures}
           </div>
       </div>
     );
   }
 }
 
-export default FourFour;
+export default Test2;

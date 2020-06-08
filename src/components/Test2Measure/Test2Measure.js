@@ -1,7 +1,7 @@
 import React from 'react';
 import ABCJS from 'abcjs';
 
-class ThreeFourMeasure extends React.Component {
+class Test2Measure extends React.Component {
   componentDidMount() {
     const { id } = this.props;
     const { notation } = this.props;
@@ -12,7 +12,7 @@ class ThreeFourMeasure extends React.Component {
     const { id } = this.props;
 
     return (
-      <div className="ThreeFourMeasure col-12">
+      <div className="Test2Measure col-12">
         <div>
           <div id={id}><p></p></div>
         </div>
@@ -21,4 +21,4 @@ class ThreeFourMeasure extends React.Component {
   }
 }
 
-export default ThreeFourMeasure;
+export default Test2Measure;

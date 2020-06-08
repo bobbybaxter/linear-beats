@@ -1,13 +1,13 @@
 import React from 'react';
 import permutationData from '../../helpers/data/permutationData';
 
-import ThreeFourMeasure from '../ThreeFourMeasure/ThreeFourMeasure';
+import Test1Measure from '../Test1Measure/Test1Measure';
 
-import './ThreeFour.scss';
+import './Test1.scss';
 
-class ThreeFour extends React.Component {
+class Test1 extends React.Component {
   state = {
-    ThreeFourBeats: [],
+    test1Beats: [],
     abcjsStrings: [],
   }
 
@@ -16,14 +16,14 @@ class ThreeFour extends React.Component {
   }
 
   buildAbcjsStrings = () => {
-    const { ThreeFourBeats } = this.state;
+    const { test1Beats } = this.state;
     const arrayOfStrings = [];
     const title = 'X: 1\nT: ';
     const notationInfo = '\nC:\nL: 1/16\nU: n=!style=x!\nK: clef=perc\nI:linebreak $\n%%stretchlast\nV: ALL stem=up\n';
-    ThreeFourBeats.forEach((perm) => {
+    test1Beats.forEach((perm) => {
       if (perm.isUsed !== false) {
         const id = perm.permutations;
-        const abcjsString = `${title}${perm.difficulty} - ${perm.permutations}${notationInfo}|:${perm.permutations} ${perm.permutations} ${perm.permutations} ${perm.permutations}:||`;
+        const abcjsString = `${title}${perm.permutations}${notationInfo}|:${perm.permutations} ${perm.permutations} ${perm.permutations} ${perm.permutations}:||`;
         const measureObject = { id, abcjsString };
         arrayOfStrings.push(measureObject);
       }
@@ -34,30 +34,30 @@ class ThreeFour extends React.Component {
   getPermsData = () => {
     permutationData.getPermutationData()
       .then((res) => {
-        this.setState({ ThreeFourBeats: res });
+        this.setState({ test1Beats: res });
         this.buildAbcjsStrings();
       })
       .catch((err) => console.error(err));
   };
 
   render() {
-    const makeThreeFourMeasures = this.state.abcjsStrings
+    const makeTest1Measures = this.state.abcjsStrings
       .map((measure) => (
-        <ThreeFourMeasure
+        <Test1Measure
           key={measure.id}
           id={measure.id}
           notation={measure.abcjsString}
         />
       ));
     return (
-      <div className="ThreeFour mt-3 justify-content-center">
-        <h1>ThreeFour</h1>
+      <div className="Test1 mt-3 justify-content-center">
+        <h1>Test1</h1>
           <div className="d-flex flex-row flex-wrap">
-            {makeThreeFourMeasures}
+            {makeTest1Measures}
           </div>
       </div>
     );
   }
 }
 
-export default ThreeFour;
+export default Test1;

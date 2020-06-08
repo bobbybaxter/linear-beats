@@ -5,10 +5,9 @@ import {
 
 import Home from '../components/Home/Home';
 import MyNavbar from '../components/MyNavbar/MyNavbar';
-import FourFour from '../components/FourFour/FourFour';
-import FiveFour from '../components/FiveFour/FiveFour';
-import ThreeFour from '../components/ThreeFour/ThreeFour';
-import SevenEight from '../components/SevenEight/SevenEight';
+import Test1 from '../components/Test1/Test1';
+import Test2 from '../components/Test2/Test2';
+import Test3 from '../components/Test3/Test3';
 
 import './App.scss';
 
@@ -22,10 +21,9 @@ class App extends React.Component {
             <div>
               <Switch>
                 <Home path="/home" />
-                <FourFour path="/four-four" />
-                <FiveFour path="/five-four" />
-                <ThreeFour path="/three-four" />
-                <SevenEight path="/seven-eight" />
+                <Test1 path="/test1" />
+                <Test2 path="/test2" />
+                <Test3 path="/test3" />
 
                 <Redirect from="*" to="/home"/>
               </Switch>

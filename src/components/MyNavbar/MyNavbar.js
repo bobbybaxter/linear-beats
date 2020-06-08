@@ -32,16 +32,13 @@ class MyNavbar extends React.Component {
           <Collapse isOpen={this.state.isOpen} navbar>
             <Nav className="ml-auto text-center" navbar>
               <NavItem>
-                <NavLink tag={RRNavLink} to="three-four">3/4</NavLink>
+                <NavLink tag={RRNavLink} to="test1">Test1</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={RRNavLink} to="four-four">4/4</NavLink>
+                <NavLink tag={RRNavLink} to="test2">Test2</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink tag={RRNavLink} to="five-four">5/4</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink tag={RRNavLink} to="seven-eight">7/8</NavLink>
+                <NavLink tag={RRNavLink} to="test3">Test3</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
