@@ -40,6 +40,9 @@ class MyNavbar extends React.Component {
               <NavItem>
                 <NavLink tag={RRNavLink} to="test3">Test3</NavLink>
               </NavItem>
+              <NavItem>
+                <NavLink tag={RRNavLink} to="test4">Test4</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Navbar>
