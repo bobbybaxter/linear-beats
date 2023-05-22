@@ -1,11 +1,9 @@
 import React from 'react';
-import permutationData from '../../helpers/data/permutationData';
-import util from '../../helpers/util';
+import { getPermutationData } from 'src/db/permutationData';
+
 import formatBeat from '../../helpers/formatBeat';
-
-import Test4Measure from '../Test4Measure/Test4Measure';
-
-import './Test4.scss';
+import util from '../../helpers/util';
+import Test4Measure from './Test4Measure';
 
 const defaultHeader = {
   // QUICK REFERENCE:
@@ -72,7 +70,7 @@ class Test4 extends React.Component {
   }
 
   getPermsData = () => {
-    permutationData.getPermutationData()
+    getPermutationData()
       .then((res) => {
         this.setState({ test3Beats: res });
         this.buildAbcjsStrings();

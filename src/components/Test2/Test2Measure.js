@@ -1,5 +1,5 @@
-import React from 'react';
 import ABCJS from 'abcjs';
+import React from 'react';
 
 class Test2Measure extends React.Component {
   componentDidMount() {

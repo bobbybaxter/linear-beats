@@ -1,7 +1,5 @@
 export default function formatBeat(beatObj) {
-  let {
-    beat1, beat2, beat3, beat4,
-  } = beatObj;
+  let { beat1, beat2, beat3, beat4 } = beatObj;
   let beatString = '';
 
   if (beat4 !== 'z1' && beat3 === 'z1' && beat2 !== 'z1' && beat1 === 'z1') {

@@ -1,10 +1,8 @@
 import React from 'react';
-import permutationData from '../../helpers/data/permutationData';
+import { getPermutationData } from 'src/db/permutationData';
+
 import util from '../../helpers/util';
-
-import Test3Measure from '../Test3Measure/Test3Measure';
-
-import './Test3.scss';
+import Test3Measure from './Test3Measure';
 
 const defaultHeader = {
   // QUICK REFERENCE:
@@ -130,7 +128,7 @@ class Test3 extends React.Component {
   }
 
   getPermsData = () => {
-    permutationData.getPermutationData()
+    getPermutationData()
       .then((res) => {
         this.setState({ test3Beats: res });
         this.buildAbcjsStrings();

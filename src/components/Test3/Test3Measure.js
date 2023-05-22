@@ -1,9 +1,7 @@
-import React from 'react';
 import ABCJS from 'abcjs';
+import React from 'react';
 
-import './Test4Measure.scss';
-
-class Test4Measure extends React.Component {
+class Test3Measure extends React.Component {
   componentDidMount() {
     const { id } = this.props;
     const { notation } = this.props;
@@ -23,4 +21,4 @@ class Test4Measure extends React.Component {
   }
 }
 
-export default Test4Measure;
+export default Test3Measure;

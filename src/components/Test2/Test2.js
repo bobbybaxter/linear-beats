@@ -1,9 +1,7 @@
 import React from 'react';
-import permutationData from '../../helpers/data/permutationData';
+import { getPermutationData } from 'src/db/permutationData';
 
-import Test2Measure from '../Test2Measure/Test2Measure';
-
-import './Test2.scss';
+import Test2Measure from './Test2Measure';
 
 class Test2 extends React.Component {
   state = {
@@ -32,7 +30,7 @@ class Test2 extends React.Component {
   }
 
   getPermsData = () => {
-    permutationData.getPermutationData()
+    getPermutationData()
       .then((res) => {
         this.setState({ Test2Beats: res });
         this.buildAbcjsStrings();
